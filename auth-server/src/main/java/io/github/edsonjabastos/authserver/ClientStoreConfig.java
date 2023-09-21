@@ -18,13 +18,12 @@ public class ClientStoreConfig {
     RegisteredClientRepository registeredClientRepository() {
         var registedClient = RegisteredClient
                 .withId(UUID.randomUUID().toString())
-                .clientId("cliente-server")
+                .clientId("client-server")
                 .clientSecret("{noop}secret")
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .redirectUri("http//127.0.0.1:8080/login/oauth2/code/client-server")
+                .redirectUri("http//127.0.0.1:8080/login/oauth2/code/client-server-oidc")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
                 .clientSettings(ClientSettings.builder()
