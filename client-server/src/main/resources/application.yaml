@@ -3,13 +3,13 @@ spring:
     oauth2:
       client:
         registration:
-          client-srver-oidc:
+          client-server-oidc:
             provider: spring
             client-id: client-server
             client-secret: secret
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-            scope: openid,profile
+            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
+            scope: openid, profile
             client-name: client-server-oidc
         provider:
           spring:
